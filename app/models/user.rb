@@ -2,9 +2,12 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
-  validates :date_birth, presence: true
-  validates :date_driver_licence, presence: true
-  validates :phone_number, presence: true
+  validates :date_birth
+  validates :date_driver_licence
+  validates :phone_number
+
+  has_many :bikes
+  has_many :bookings
 
 end
 
