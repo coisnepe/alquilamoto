@@ -1,0 +1,20 @@
+<h1>Bike's details</h1>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
+      <img src="http://placehold.it/500x500" width="auto" />
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
+      <div class="text-center">
+        <p><%= @bike.description %></p>
+        <p>Category: <%= @bike.bike_category %></p>
+        <p>Price/day: <%= @bike.price_per_day %></p>
+        <p>Location: <%= @bike.city %></p>
+      </div>
+    </div>
+
+  </div>
+</div>

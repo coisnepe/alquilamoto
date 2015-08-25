@@ -1,5 +1,16 @@
-<ul>
+<h1>Our bikes</h1>
+
+<div class="container">
+  <div class="row">
   <% @bikes.each do |bike| %>
-    <li><%= bike.description %></li>
-  <% end  %>
-</ul>
+    <div class="col-xs-3">
+      <div class="bike-card text-center">
+        <p><%= bike.description %></p>
+        <p>Category: <%= bike.bike_category %></p>
+        <p>Price/day: <%= bike.price_per_day %></p>
+        <p>Location: <%= bike.city %></p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
