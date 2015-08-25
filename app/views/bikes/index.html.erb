@@ -1,11 +1,11 @@
-<h1>Our bikes</h1>
+<h1 class="text-center">Our bikes</h1>
 
 <div class="container">
   <div class="row">
   <% @bikes.each do |bike| %>
     <div class="col-xs-3">
       <div class="bike-card text-center">
-        <p><%= bike.description %></p>
+        <p><%= link_to bike_path(bike) do %><%= bike.description %><% end %></p>
         <p>Category: <%= bike.bike_category %></p>
         <p>Price/day: <%= bike.price_per_day %></p>
         <p>Location: <%= bike.city %></p>
