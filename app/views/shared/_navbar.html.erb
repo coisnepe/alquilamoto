@@ -1,9 +1,9 @@
 <nav class="navbar-wagon">
   <div class="container navbar-wagon-container">
 
-    <a href="">
+    <%= link_to root_path do %>
       <%= image_tag "logo.jpg", width:"60" %>
-    </a>
+    <% end  %>
 
     <%= link_to t(".top_call_to_action", default: "Sign In"), "#", class: "navbar-wagon-item rafa" %>
     <%= link_to t(".top_call_to_action", default: "Sign Up"), "#", class: "navbar-wagon-item rafa" %>
