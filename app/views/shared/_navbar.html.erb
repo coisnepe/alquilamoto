@@ -13,8 +13,10 @@
         </div>
       <% end %>
       <hr>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
+          <!-- TODO Replace placehold avatar image by: current_user.picture -->
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -23,7 +25,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>
@@ -38,7 +40,6 @@
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-
 
     <%= link_to t(".top_call_to_action", default: "See all bikes"), bikes_path , class: "navbar-wagon-item navbar-wagon-button btn rafa" %>
     <%= link_to t(".top_call_to_action", default: "Add my bike"), new_bike_path, class: "navbar-wagon-item navbar-wagon-button btn rafa" %>
