@@ -13,21 +13,25 @@ bikes = [
     bike_category: "roadster",
     description: "Kawasaki ZR7",
     price_per_day: 100,
+    city: "Paris"
   },
   {
     bike_category: "sportive",
     description: "Honda CBR 600",
     price_per_day: 150,
+    city: "Lyon"
   },
   {
     bike_category: "chopper",
     description: "Harley-Davidson Roadster",
     price_per_day: 150,
+    city: "Lille"
   },
   {
     bike_category: "Dual Sport",
     description: "Husqvarna Nuda",
     price_per_day: 120,
+    city: "Nantes"
   },
 
 ]
