@@ -1,5 +1,6 @@
 <ul>
   <% @bikes.each do |bike| %>
     <li><%= bike.description %></li>
+    <li><%= link_to "Bike Details", bike_path(bike) %></li>
   <% end  %>
 </ul>
