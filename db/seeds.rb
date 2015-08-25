@@ -12,17 +12,17 @@ bikes = [
   {
     type: "roadster",
     description: "Kawasaki ZR7",
-    price_per_day: 100
+    price_per_day: 100,
   },
   {
     type: "sportive",
     description: "Honda CBR 600",
-    price_per_day: 150
+    price_per_day: 150,
   },
   {
     type: "chopper",
     description: "Harley-Davidson Roadster",
-    price_per_day: 150
+    price_per_day: 150,
   },
   {
     type: "Dual Sport",
