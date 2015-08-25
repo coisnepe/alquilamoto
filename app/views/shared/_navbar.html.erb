@@ -40,7 +40,7 @@
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-
+    <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to t(".top_call_to_action", default: "See all bikes"), bikes_path , class: "navbar-wagon-item navbar-wagon-button btn rafa" %>
     <%= link_to t(".top_call_to_action", default: "Add my bike"), new_bike_path, class: "navbar-wagon-item navbar-wagon-button btn rafa" %>
   </div>
