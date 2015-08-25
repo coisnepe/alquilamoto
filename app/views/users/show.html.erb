@@ -1,15 +1,23 @@
-<h1>Your profile</h1>
+
 
 <div class="container">
+
   <div class="row">
-
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h1>Your profile</h1>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
-
+      <%= image_tag "http://placehold.it/300x450" %>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
       <div class="text-center">
-        <p><%= @user.first_name %></p>
+        <p><%= @user.first_name %>first</p>
+        <p><%= @user.last_name %>last</p>
+        <p><%= @user.email %>email</p>
+        <p><%= @user.phone_number %>phone</p>
+        <p><%= @user.date_birth %>birth</p>
+        <p><%= @user.date_driver_licence %>licence</p>
 
       </div>
     </div>
