@@ -10,22 +10,22 @@ Bike.destroy_all
 
 bikes = [
   {
-    type: "roadster",
+    bike_category: "roadster",
     description: "Kawasaki ZR7",
     price_per_day: 100,
   },
   {
-    type: "sportive",
+    bike_category: "sportive",
     description: "Honda CBR 600",
     price_per_day: 150,
   },
   {
-    type: "chopper",
+    bike_category: "chopper",
     description: "Harley-Davidson Roadster",
     price_per_day: 150,
   },
   {
-    type: "Dual Sport",
+    bike_category: "Dual Sport",
     description: "Husqvarna Nuda",
     price_per_day: 120,
   },
