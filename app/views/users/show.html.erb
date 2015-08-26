@@ -24,9 +24,38 @@
       <hr>
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-      <%= link_to "See my bikes", '#', class: "btn btn-primary"%>
+
       <%= link_to "Bookings", '#', class: "btn btn-primary"%>
       <%= link_to "My bikes bookings", '#', class: "btn btn-primary"%>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+        <h2>My Bikes</h2>
+        <% current_user.bikes.each do |bike| %>
+        <div class="row">
+
+            <div class="col-sm-6">
+              <%= image_tag bike.picture.url(:small) %>
+              <h3>hello</h3>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled">
+                <li><%= bike.bike_category %></li>
+                <li><%= bike.description %></li>
+              </ul>
+            </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
+
   </div>
 </div>
