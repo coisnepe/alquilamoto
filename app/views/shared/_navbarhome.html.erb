@@ -16,6 +16,9 @@
           <% if user_signed_in? %>
                   <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
                       <ul class="nav navbar-nav navbar-right">
+                      <li>
+                      <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+                      </li>
                           <li>
                             <%= link_to t(".top_call_to_action", default: "See all bikes"), bikes_path , class: "btn rafa" %>
                           </li>
