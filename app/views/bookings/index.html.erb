@@ -1,2 +1,9 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>All your upcoming bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <ul>
+    <li>The bike you're renting: <strong><%= Bike.find(booking.bike_id).description %></strong></li>
+    <!-- <li><%#= User.find(booking.user_id).first_name %></li> -->
+    <li>It'll have to be returned by <strong><%= booking.date_end %></strong></li>
+  </ul>
+<% end %>

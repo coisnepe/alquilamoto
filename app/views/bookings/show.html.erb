@@ -1,13 +1,18 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container">
+  <div class="row text-center">
+    <h1>Here's your booking's details</h1>
+  </div>
+</div>
+<hr>
 
-<ul class="list-unstyled">
-  <li><%= @booking.date_begin %></li>
-  <li><%= @booking.date_end %></li>
-  <li><%= @booking.total_price %></li>
-  <li><%= @bike.description %></li>
-  <li><%= @user.first_name %></li>
-</ul>
-
-
-date_begin: "2015-08-26", date_end: "2015-08-26", total_price: 300, bike_id: 23, user_id: 1
+<div class="container">
+  <div class="row text-center">
+    <ul class="list-unstyled">
+      <li>Rental starts on : <strong><%= @booking.date_begin %></strong></li>
+      <li>Rental ends on : <strong><%= @booking.date_end %></strong></li>
+      <li>Total price for your rental : <strong><%= @booking.total_price %> €</strong></li>
+      <li>Bike's details : <strong><%= @bike.description %></strong></li>
+      <li>Owner's first name : <strong><%= @user.first_name %></strong></li>
+    </ul>
+  </div>
+</div>
