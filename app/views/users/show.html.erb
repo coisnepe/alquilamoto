@@ -12,14 +12,17 @@
 
     <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
       <div class="text-center">
-        <p><%= @user.first_name %>first</p>
-        <p><%= @user.last_name %>last</p>
-        <p><%= @user.email %>email</p>
-        <p><%= @user.phone_number %>phone</p>
-        <p><%= @user.date_birth %>birth</p>
+        <p><%= @user.first_name %></p>
+        <p><%= @user.last_name %></p>
+        <p><%= @user.email %></p>
+        <p><%= @user.phone_number %></p>
+        <p><%= @user.date_birth %></p>
         <p><%= @user.date_driver_licence %>licence</p>
-
       </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
+
+      <%= link_to "Edit profile", edit_user_registration_path(@user), class: "btn btn-primary"%>
     </div>
 
   </div>
