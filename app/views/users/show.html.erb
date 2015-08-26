@@ -4,22 +4,20 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
-      <h1>Your profile</h1>
+      <h1>My profile</h1>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
-      <%= image_tag "http://placehold.it/300x450" %>
-    </div>
+      <%= image_tag "http://placehold.it/100x100" %>
+      <ul class="list-unstyled">
+        <li><strong>First name: </strong> <%= @user.first_name %></li>
+        <li><strong>Last name: </strong><%= @user.last_name %></li>
+        <li><strong>Email: </strong><%= @user.email %></li>
+        <li><strong>Phone number: </strong><%= @user.phone_number %></li>
+        <li><strong>Birth date: </strong><%= @user.date_birth %></li>
+        <li><strong>Driver's licence date of issue: </strong><%= @user.date_driver_licence %></li>
+        <li><strong>Bio: </strong><%= @user.bio %></li>
+      </ul>
 
-    <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
-      <div class="text-center">
-        <p><%= @user.first_name %></p>
-        <p><%= @user.last_name %></p>
-        <p><%= @user.email %></p>
-        <p><%= @user.phone_number %></p>
-        <p><%= @user.date_birth %></p>
-        <p><%= @user.date_driver_licence %></p>
-        <p><%= @user.bio %></p>
-      </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6" style="border-style: solid; border-width: 2px">
 
