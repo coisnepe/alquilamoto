@@ -1,16 +1,52 @@
-<h1 class="text-center">Our bikes</h1>
+<div class="container" style="padding:30px">
+  <div class="row">
+    <h1 class="text-center">Look for a bike near a city</h1>
+  </div>
+</div>
+
+<div class="container" style="padding:10px">
+  <div class="row text-center">
+    <form action="" method="get" class="form-inline">
+      <input type="text" class="navbar-wagon-search-input " placeholder="Find bikes in..." name="city">
+      <%#= link_to "SEARCH A BIKE!", bikes_path , class: "btn btn-primary" %>
+      <input class="btn btn-success" type="submit" value="Find a bike" >
+    </form>
+  </div>
+</div>
+<hr>
 
 <div class="container">
   <div class="row">
   <% @bikes.each do |bike| %>
-    <div class="col-xs-3">
+    <div class="col-xs-4">
+
       <div class="bike-card text-center">
         <p><%= link_to bike_path(bike) do %><%= bike.description %><% end %></p>
         <p>Category: <%= bike.bike_category %></p>
         <p>Price/day: <%= bike.price_per_day %></p>
         <p>Location: <%= bike.city %></p>
+        <span><%= image_tag bike.picture(:thumb) %></span>
       </div>
     </div>
+
   <% end %>
   </div>
 </div>
+
+
+<!-- <div class="container">
+  <div class="row">
+  <%# @bikes.each do |bike| %>
+    <div class="col-xs-3">
+      <div class="bike-card text-center">
+        <p><%#= link_to bike_path(bike) do %><%#= bike.description %><%# end %></p>
+        <p>Category: <%#= bike.bike_category %></p>
+        <p>Price/day: <%#= bike.price_per_day %></p>
+        <p>Location: <%#= bike.city %></p>
+        <span><%#= image_tag bike.picture(:thumb) %></span>
+      </div>
+    </div>
+  <%# end %>
+  </div>
+</div>
+ -->
