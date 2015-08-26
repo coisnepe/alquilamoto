@@ -1,0 +1,45 @@
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to root_path do %>
+                  <%= image_tag "logo.jpg", width:"60" %>
+                <% end  %>
+            </div>
+
+          <% if user_signed_in? %>
+                  <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li>
+                            <%= link_to t(".top_call_to_action", default: "See all bikes"), bikes_path , class: "btn rafa" %>
+                          </li>
+                          <li>
+                            <%= link_to t(".top_call_to_action", default: "Add my bike"), new_bike_path, class: "btn rafa" %>
+                          </li>
+                          <li>
+                            <%= link_to destroy_user_session_path, method: :delete do %>
+                              <i class="fa fa-sign-out"></i>
+                              <%= t ".sign_out", default: "Log out" %>
+                            <% end %>
+                          </li>
+                      </ul>
+                  </div>
+          <% else %>
+                      <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+                        <ul class="nav navbar-nav navbar-right">
+                          <li>
+                            <%= link_to t(".sign_in", default: "Login"), new_user_session_path %>
+                          </li>
+                          <li>
+                            <%= link_to t(".sign_in", default: "Sign Up"), new_user_registration_path %>
+                          </li>
+                        </ul>
+                      </div>
+          <% end %>
+        </div>
+    </div>
