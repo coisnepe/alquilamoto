@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <h1>My profile</h1>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= image_tag "http://placehold.it/100x100" %>
+      <ul class="list-unstyled">
+        <li><strong>First name: </strong> <%= @user.first_name %></li>
+        <li><strong>Last name: </strong><%= @user.last_name %></li>
+        <li><strong>Email: </strong><%= @user.email %></li>
+        <li><strong>Phone number: </strong><%= @user.phone_number %></li>
+        <li><strong>Birth date: </strong><%= @user.date_birth %></li>
+        <li><strong>Driver's licence date of issue: </strong><%= @user.date_driver_licence %></li>
+        <li><strong>Bio: </strong><%= @user.bio %></li>
+      </ul>
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <%= link_to "Edit profile", edit_user_registration_path(@user), class: "btn btn-primary"%>
+      <hr>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <%= link_to "See my bikes", '#', class: "btn btn-primary"%>
+      <%= link_to "Bookings", '#', class: "btn btn-primary"%>
+      <%= link_to "My bikes bookings", '#', class: "btn btn-primary"%>
+    </div>
+
+  </div>
+</div>
