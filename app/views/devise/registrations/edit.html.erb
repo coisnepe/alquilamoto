@@ -16,6 +16,7 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <!-- next 5 lines added by RP, to get customer possibility to update more fields of his profile -->
+          <%= f.input :picture, required: false, autofocus: false %>
           <%= f.input :first_name, required: false, autofocus: true %>
           <%= f.input :last_name, required: false, autofocus: true %>
           <%= f.input :phone_number, required: false, autofocus: true %>

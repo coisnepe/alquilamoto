@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     # Comment RP: i didn'i added the email, so in theiry customer can't update it
     # devise_parameter_sanitizer.for(:account_update) { |u| u.permit( :first_name, :last_name, :phone_number, :date_birth, :date_driver_licence) }
+    devise_parameter_sanitizer.for(:account_update) << :picture
     devise_parameter_sanitizer.for(:account_update) << :first_name
     devise_parameter_sanitizer.for(:account_update) << :last_name
     devise_parameter_sanitizer.for(:account_update) << :phone_number
