@@ -7,7 +7,7 @@
       <h1>My profile</h1>
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= image_tag current_user.picture.url(:medium) %>
+      <%= image_tag current_user.picture.url(:small) %>
       <ul class="list-unstyled">
         <li><strong>First name: </strong> <%= @user.first_name %></li>
         <li><strong>Last name: </strong><%= @user.last_name %></li>
