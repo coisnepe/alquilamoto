@@ -1,6 +1,6 @@
 <h1>All your upcoming bookings</h1>
 
-<% @bookings.each do |booking| %>
+<% current_user.bookings.each do |booking| %>
   <ul>
     <li>The bike you're renting: <strong><%= Bike.find(booking.bike_id).description %></strong></li>
         <li>It belongs to : <strong><%= Bike.find(booking.bike_id).user_id %></strong></li>
