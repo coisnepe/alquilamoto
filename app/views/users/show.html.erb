@@ -25,8 +25,8 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
 
-      <%= link_to "Bookings", '#', class: "btn btn-primary"%>
-      <%= link_to "My bikes bookings", '#', class: "btn btn-primary"%>
+      <%= link_to "Bikes I booked", user_bookings_path(@user), class: "btn btn-primary"%>
+      <%= link_to "My bikes' bookings", '#', class: "btn btn-primary"%>
     </div>
 
     <div class="row">
@@ -36,8 +36,7 @@
         <div class="row">
 
             <div class="col-sm-6">
-              <%= image_tag bike.picture.url(:small) %>
-              <h3>hello</h3>
+              <%= image_tag bike.picture.url(:medium) %>
             </div>
             <div class="col-sm-6">
               <ul class="list-unstyled">

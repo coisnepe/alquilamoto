@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row text-center">
+    <h2>Hi <strong><%= current_user.first_name %></strong>!</h2>
+    <h3>Here's your booking's details</h3>
+  </div>
+</div>
+<hr>
+
+<div class="container">
+  <div class="row text-center">
+    <ul class="list-unstyled">
+      <li>Rental starts on : <strong><%= @booking.date_begin %></strong></li>
+      <li>Rental ends on : <strong><%= @booking.date_end %></strong></li>
+      <li>Total price for your rental : <strong><%= @booking.total_price %> €</strong></li>
+      <li>Bike's details : <strong><%= @bike.description %></strong></li>
+      <li>Owner's first name : <strong><%= @user.first_name %></strong></li>
+    </ul>
+  </div>
+</div>
