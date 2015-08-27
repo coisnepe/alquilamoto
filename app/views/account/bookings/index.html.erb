@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>All your upcoming bookings</h1>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <% @bookings.each do |booking| %>
+        <ul>
+          <li>The bike you're renting: <strong><%= booking.bike.description %></strong></li>
+          <li>It belongs to : <strong><%=  booking.bike.owner.email %></strong></li>
+          <li>You'll get it by <strong><%= booking.date_begin %></strong></li>
+          <li>It'll have to be returned by <strong><%= booking.date_end %></strong></li>
+          <li>The total amount is: <strong><%= booking.total_price %></strong> euros</li>
+        </ul>
+      <% end %>
+
+    </div>
+  </div>
+</div>
