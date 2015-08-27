@@ -1,3 +1,46 @@
+
+.bikecard {
+  padding: 5px;
+  height: 200px;
+}
+.flex-container {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  // background-color: rgba(0%, 0%, 0%,.2);
+   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.flex-bike-details {
+  // background-color: rgba(0%, 0%, 0%, .1);
+  align-self: flex-end;
+  line-height: 1;
+}
+
+.flex-image {
+  align-self: center;
+  // background-color: yellow;
+  background-size:cover;
+  //overflow hidden
+  width: 110px;
+  height: 110px;
+  background-position:center;
+}
+
+.flex-bike-description {
+  -webkit-align-content: stretch; /* Safari */
+  align-self: flex-start;
+  // background-color: rgba(0%, 0%, 0%, .3);
+  width: 100%;
+}
+
+
 .bike-card {
   position: relative;
   height: 175px;
@@ -55,41 +98,4 @@
       opacity: 0.1;
     }
   }
-}
-
-.bikecard {
-  padding: 5px
-}
-.flex-container {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 3px;
-  display: -webkit-flex; /* Safari */
-  display: flex;
-  background-color: red;
-   -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  padding: 10px;
-  justify-content: space-between;
-
-}
-
-.flex-bike-details {
-  background-color: orange;
-  align-self: flex-end;
-}
-
-.flex-image {
-  align-self: flex-end;
-  background-color: yellow;
-
-
-}
-
-.flex-bike-description {
-  -webkit-align-content: stretch; /* Safari */
-  align-self: flex-start;
-  background-color: green;
-  width: 100%;
-
 }
