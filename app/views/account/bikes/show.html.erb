@@ -21,6 +21,7 @@
         <p>Price/day: <%= @bike.price_per_day %></p>
         <p>Location: <%= @bike.city %></p>
         <p>Comments: <%= @bike.comment %></p>
+        <%= link_to "Edit this bike",  edit_account_bike_path(@bike), class: "btn btn-warning"%>
         <%= link_to "Back to Profile",  user_path(current_user), class: "btn btn-primary"%>
 
       </div>

@@ -1,0 +1,17 @@
+<h1>Edit this bike</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@account, @bike] do |f| %>
+        <%= f.input :bike_category, autofocus: true %>
+        <%= f.input :description %>
+        <%= f.input :price_per_day %>
+        <%= f.input :city %>
+        <%= f.input :picture %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

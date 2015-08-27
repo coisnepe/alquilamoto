@@ -19,10 +19,20 @@ module Account
       redirect_to bike_path(@bike)
     end
 
+    def edit
+      @bike = Bike.find(params[:id])
+    end
+
+    def update
+      @bike = Bike.find(params[:id])
+      @bike.update(bike_params)
+
+    end
+
     private
 
     def bike_params
-      params.require(:bike).permit(:bike_category, :description, :price_per_day, :city, :picture)
+      params.require(:bike).permit(:bike_category, :description, :price_per_day, :city, :picture, :comment)
     end
   end
 end
