@@ -36,7 +36,9 @@
         <div class="row">
 
             <div class="col-sm-6">
-              <%= image_tag bike.picture.url(:medium) %>
+              <%= link_to account_bike_path(bike) do%>
+                <%= image_tag bike.picture.url(:medium) %>
+              <% end %>
             </div>
             <div class="col-sm-6">
               <ul class="list-unstyled">
