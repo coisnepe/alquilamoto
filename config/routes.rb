@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+# Note RP: resources: user don't needed because devise manage user routes.
+# resources: bookings without nesting not needed because we'll need the bike id in the url
+# so we only need the resources:bookings that is nested in bikes
+
+
   devise_for :users
 
   root to: 'pages#home'
