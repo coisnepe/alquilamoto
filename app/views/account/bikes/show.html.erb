@@ -1,0 +1,49 @@
+<h1>This is a view in mode Account, yo see the comments field thas customers can't see</h1>
+
+
+<div class="container">
+
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h1>Bike's details</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <%= image_tag @bike.picture.url(:thumb) %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="text-center">
+        <p><%= @bike.description %></p>
+        <p>Category: <%= @bike.bike_category %></p>
+        <p>Price/day: <%= @bike.price_per_day %></p>
+        <p>Location: <%= @bike.city %></p>
+        <p>Comments: <%= @bike.comment %></p>
+        <%= link_to "Back to Profile",  user_path(current_user), class: "btn btn-primary"%>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="row">
+    <div id="map" style="width: 50%; height: 300px;"></div>
+
+    <% content_for(:after_js) do %>
+      <%= javascript_tag do %>
+        $(document).on('ready', function() {
+          handler = Gmaps.build('Google');
+          handler.buildMap({internal: { id: 'map' } }, function(){
+            markers = handler.addMarkers(<%= raw @markers.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+          });
+        })
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<!-- handler.getMap().setZoom(8); -->
+
