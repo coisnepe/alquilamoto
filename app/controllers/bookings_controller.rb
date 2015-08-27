@@ -2,8 +2,9 @@ class BookingsController < ApplicationController
 
 
   def index
-    # @bookings =  Booking.where(user_id: params[:user_id])
-
+    # @bookings = Booking.where(customer: current_user) this will be in anothe method not nested
+    @bike = Bike.find(params[:bike_id])
+    @booking = Booking.where(bike_id: @bike.id)
   end
 
   def show

@@ -2,7 +2,7 @@ module Account
   class BookingsController < ApplicationController
 
     def index
-      @bookings = Booking.where(customer: current_user)
+      # @bookings = Booking.where(customer: current_user)
     end
 
     def show

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # Routes for customer navigation
   resources :users, only: :show
   resources :bikes, only: [:index, :show]  do
-    resources :bookings, only: [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show, :index]
   end
 
 # Routes for owner navigation => see his bikes, see bookins for his bikes, see the bookings he sent to other owners
