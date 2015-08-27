@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'rails', '4.2.3'
@@ -10,6 +10,11 @@ gem 'devise'
 
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+
+gem 'geocoder'
+gem "coffee-rails"
+gem "gmaps4rails"
+gem 'underscore-rails'
 
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
@@ -30,4 +35,8 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'puma'
+end
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
 end
