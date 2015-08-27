@@ -56,3 +56,40 @@
     }
   }
 }
+
+.bikecard {
+  padding: 5px
+}
+.flex-container {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  background-color: red;
+   -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 10px;
+  justify-content: space-between;
+
+}
+
+.flex-bike-details {
+  background-color: orange;
+  align-self: flex-end;
+}
+
+.flex-image {
+  align-self: flex-end;
+  background-color: yellow;
+
+
+}
+
+.flex-bike-description {
+  -webkit-align-content: stretch; /* Safari */
+  align-self: flex-start;
+  background-color: green;
+  width: 100%;
+
+}
