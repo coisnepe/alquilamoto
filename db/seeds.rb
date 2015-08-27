@@ -9,30 +9,40 @@
 Bike.destroy_all
 
 bikes = [
-  {
-    bike_category: "roadster",
-    description: "Kawasaki ZR7",
-    price_per_day: 100,
-    city: "Paris"
-  },
-  {
-    bike_category: "sportive",
-    description: "Honda CBR 600",
-    price_per_day: 150,
-    city: "Lyon"
-  },
-  {
-    bike_category: "chopper",
-    description: "Harley-Davidson Roadster",
-    price_per_day: 150,
-    city: "Lille"
-  },
-  {
-    bike_category: "Dual Sport",
-    description: "Husqvarna Nuda",
-    price_per_day: 120,
-    city: "Nantes"
-  },
+ {
+   bike_category: "Roadster",
+   description: "Triumph Street Triple R",
+   price_per_day: 200,
+   user_id: 1,
+   city: "Paris",
+   picture: 'http://alquilamoto.s3.amazonaws.com/development/bikes/pictures/000/000/022/large/triumph-streettriple.jpg?1440517831',
+ },
+ {
+   bike_category: "sportive",
+   description: "BMW S1000RR",
+   price_per_day: 250,
+   user_id: 2,
+   city: "Lyon",
+   picture: "http://alquilamoto.s3.amazonaws.com/development/bikes/pictures/000/000/024/large/bmw-s1000rr.jpg?1440595273",
+ },
+ {
+   bike_category: "chopper",
+   description: "Harley-Davidson Roadster",
+   price_per_day: 150,
+   user_id: 2,
+   city: "Lille",
+   picture: "http://alquilamoto.s3.amazonaws.com/development/bikes/pictures/000/000/026/large/mhorn19983ra-01.jpg?1440614699",
+
+ },
+ {
+   bike_category: "Dual Sport",
+   description: "Husqvarna Nuda",
+   price_per_day: 120,
+   user_id: 3,
+   city: "Nantes",
+   picture: "http://alquilamoto.s3.amazonaws.com/development/bikes/pictures/000/000/030/large/maxresdefault.jpg?1440619783",
+
+ }
 
 ]
 
