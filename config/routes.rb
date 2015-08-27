@@ -28,6 +28,12 @@ namespace :account do
 end
 
 
+# tryon to validate booking:
+resources :bookings do
+    member do
+        get :flop
+    end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

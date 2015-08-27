@@ -32,6 +32,18 @@ class BookingsController < ApplicationController
 
   end
 
+  def flop
+      booking = Booking.find(params[:id])
+      booking.validated = !booking.validated # flop the status
+      booking.save
+
+      redirect_to user_path(current_user)
+  end
+  # def status_name
+  #     status ? "Yes" : "No"
+  # end
+
+
   private
 
   def booking_params

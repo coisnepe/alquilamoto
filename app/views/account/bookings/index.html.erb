@@ -20,7 +20,9 @@
             <% else %>
               <li>Status: <strong>Waiting for your validation</strong></li>
             <% end %>
-            <a class="btn btn-success"> Validate this booking</a>
+            <!-- below rp tryong to validate booking -->
+            <%= link_to "Validate this booking", flop_booking_path(booking)%>
+             <!-- <a id="validate_booking" class="btn btn-success"> Validate this booking</a> -->
           </ul>
         <% end %>
       <% end %>
@@ -33,6 +35,12 @@
 </div>
 
 
+<!-- //   $(document).on('ready', function() {
+//     $(#validate_booking).click( function() {
+
+//     });
+//   })
+ -->
 
 
 <!-- THIS IS NOT GOOD HERE I NEED THE BOOKING OF ALLA MY BIKES
