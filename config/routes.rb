@@ -6,12 +6,8 @@ Rails.application.routes.draw do
 
   resources :bikes
 
-  resources :users
-
-  resources :bookings
-
-  resources :users do
-    resources :bookings
+  resources :bikes do
+    resources :bookings, only: [:new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
