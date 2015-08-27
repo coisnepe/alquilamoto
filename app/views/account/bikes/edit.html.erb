@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <%= simple_form_for [@account, @bike] do |f| %>
+      <%= simple_form_for @bike, url: account_bike_path(@bike), method: :patch do |f| %>
         <%= f.input :bike_category, autofocus: true %>
         <%= f.input :description %>
         <%= f.input :price_per_day %>
