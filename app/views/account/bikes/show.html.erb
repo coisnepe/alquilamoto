@@ -1,4 +1,4 @@
-<h1>This is a view in mode Account, yo see the comments field thas customers can't see</h1>
+<h1>This is a view in mode Account, yo see the comments field that customers can't see</h1>
 
 
 <div class="container">
@@ -10,8 +10,8 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6">
-      <%= image_tag @bike.picture.url(:thumb) %>
+    <div class="col-xs-12 col-sm-12 col-md-6 text-center">
+      <%= image_tag @bike.picture.url(:medium) %>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -27,22 +27,24 @@
     </div>
 
   </div>
-    <div class="row">
-    <div id="map" style="width: 50%; height: 300px;"></div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="map" style="width: 50%; height: 300px;"></div>
 
-    <% content_for(:after_js) do %>
-      <%= javascript_tag do %>
-        $(document).on('ready', function() {
-          handler = Gmaps.build('Google');
-          handler.buildMap({internal: { id: 'map' } }, function(){
-            markers = handler.addMarkers(<%= raw @markers.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-          });
-        })
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+    </div>xs-12
 </div>
 
 <!-- handler.getMap().setZoom(8); -->
