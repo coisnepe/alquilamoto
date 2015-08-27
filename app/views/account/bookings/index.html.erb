@@ -15,6 +15,12 @@
             <li>The renter will come for it on: <strong><%= booking.date_begin %></strong></li>
             <li>It'll have to returned your bike by <strong><%= booking.date_end %></strong></li>
             <li>The total amount you are earning is: <strong><%= booking.total_price %></strong> euros</li>
+            <% if booking.validated == true %>
+              <li>Status: <strong>Validated</strong></li>
+            <% else %>
+              <li>Status: <strong>Waiting for your validation</strong></li>
+            <% end %>
+            <a class="btn btn-success"> Validate this booking</a>
           </ul>
         <% end %>
       <% end %>

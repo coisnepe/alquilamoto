@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
     @booking.total_price = 1000
     @booking.bike_id = @bike.id
     @booking.user_id = current_user.id
+    @booking.validated = false
     # @booking.total_price = TODO
     @booking.save
 
