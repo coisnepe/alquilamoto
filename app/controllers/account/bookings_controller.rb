@@ -2,10 +2,11 @@ module Account
   class BookingsController < ApplicationController
 
     def index
-      @bookings = Bookings.all.where("owner LIKE '%#{current_user}%'")
+      @bookings = Booking.where(customer: current_user)
     end
 
     def show
+      # TODO Show a selected booking
     end
 
   end

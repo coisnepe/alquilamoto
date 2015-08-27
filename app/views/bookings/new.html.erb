@@ -1,2 +1,20 @@
 <h1>Bookings Prodcedure</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@bike, @booking] do |f| %>
+        <%= f.input :date_begin %>
+        <%= f.input :date_end %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!--
+t.date     "date_begin"
+t.date     "date_end"
+t.integer  "total_price"
+t.integer  "bike_id"
+t.integer  "user_id" -->

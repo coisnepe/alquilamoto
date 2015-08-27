@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+
+  before_action :find_cocktail, only: [ :show ]
   def index
     # @bookings =  Booking.where(user_id: params[:user_id])
 
@@ -11,8 +13,25 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
+    @bike = Bike.find(params[:bike_id])
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @bike = Bike.find(params[:bike_id])
+    @booking.total_price = 1000
+    @booking.bike_id = @bike.id
+    @booking.user_id = current_user.id
+    # @booking.total_price = TODO
+    @booking.save
+    redirect_to root_path
+
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:date_begin, :date_end, :total_price, :bike_id, :user_id)
   end
 end
