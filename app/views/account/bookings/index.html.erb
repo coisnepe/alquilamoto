@@ -1,27 +1,33 @@
 
-
-
-
-<!-- THIS IS NOT GOOD HERE I NEED THE BOOKING OF ALLA MY BIKES
-AND THIS ONE WILL BE IN AN  INDEX OF ALL MY BOOKINGS -->
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h1>All your upcoming bookings</h1>
+      <h1>The bookings of your bikes:</h1>
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
+      <% cont = 0 %>
       <% @bookings.each do |booking| %>
-        <ul>
-          <li>The bike you're renting: <strong><%= booking.bike.description %></strong></li>
-          <li>It belongs to : <strong><%=  booking.bike.owner.email %></strong></li>
-          <li>You'll get it by <strong><%= booking.date_begin %></strong></li>
-          <li>It'll have to be returned by <strong><%= booking.date_end %></strong></li>
-          <li>The total amount is: <strong><%= booking.total_price %></strong> euros</li>
-        </ul>
+        <% if booking.owner == current_user %>
+          <% cont += 1 %>
+          <ul>
+            <li>Your bike: <strong><%= booking.bike.description %></strong></li>
+            <li>Renting to: <strong><%=  booking.customer.email %></strong></li>
+            <li>The renter will come for it on: <strong><%= booking.date_begin %></strong></li>
+            <li>It'll have to returned your bike by <strong><%= booking.date_end %></strong></li>
+            <li>The total amount you are earning is: <strong><%= booking.total_price %></strong> euros</li>
+          </ul>
+        <% end %>
+      <% end %>
+      <% if cont == 0 %>
+        <p class="text-center"> For the moment you don't have bookings for your bikes </p>
       <% end %>
       <%= link_to "Back to Profile",  user_path(current_user), class: "btn btn-primary"%>
     </div>
   </div>
 </div>
+
+
+
+
+<!-- THIS IS NOT GOOD HERE I NEED THE BOOKING OF ALLA MY BIKES
+AND THIS ONE WILL BE IN AN  INDEX OF ALL MY BOOKINGS -->
