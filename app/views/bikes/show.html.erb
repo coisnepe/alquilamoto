@@ -19,7 +19,13 @@
         <p>Category: <%= @bike.bike_category %></p>
         <p>Price/day: <%= @bike.price_per_day %></p>
         <p>Location: <%= @bike.city %></p>
+        <% if @bike.owner != current_user %>
+          <p><%= link_to "Book this bike", new_booking_path, class: "btn btn-success" %></p>
+        <% end %>
       </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+
     </div>
 
   </div>
