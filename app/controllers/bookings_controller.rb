@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :find_cocktail, only: [ :show ]
+
   def index
     # @bookings =  Booking.where(user_id: params[:user_id])
 
@@ -25,7 +25,8 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     # @booking.total_price = TODO
     @booking.save
-    redirect_to root_path
+
+    redirect_to bike_booking_path(@booking.bike_id,@booking)
 
   end
 
