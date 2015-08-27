@@ -21,17 +21,6 @@ class BikesController < ApplicationController
   end
 
 
-  def new
-    @bike = Bike.new
-  end
-
-  def create
-    @bike = Bike.new(bike_params)
-    @bike.owner = current_user
-    @bike.save
-    redirect_to bike_path(@bike)
-  end
-
   private
 
   def bike_params

@@ -1,6 +1,6 @@
 class Booking < ActiveRecord::Base
   belongs_to :bike
-  belongs_to :user
+  has_one :owner, through: :bike    #cette ligne nous sert à faire un booking.owner au lieu de booking.bike.owner
   belongs_to :customer, class_name: "User", foreign_key: :user_id
   validates :date_begin, presence: true
   validates :date_end, presence: true

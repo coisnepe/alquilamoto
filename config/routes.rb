@@ -1,18 +1,32 @@
 Rails.application.routes.draw do
 
+# Note RP: resources: user don't needed because devise manage user routes.
+# resources: bookings without nesting not needed because we'll need the bike id in the url
+# so we only need the resources:bookings that is nested in bikes
+# bookings nested in users are not needed because we only want to show the bookings
+# of the current user, and we cang get his id doin current_user, so dont needed to pass it
+# in the url
+
   devise_for :users
 
   root to: 'pages#home'
 
-  resources :bikes
 
-  resources :users
 
-  resources :bookings
 
-  resources :users do
-    resources :bookings
+  # Routes for customer navigation
+  resources :users, only: :show
+  resources :bikes, only: [:index, :show]  do
+    resources :bookings, only: [:new, :create, :show]
   end
+
+# Routes for owner navigation => see his bikes, see bookins for his bikes, see the bookings he sent to other owners
+namespace :account do
+  resources :bikes
+  resources :bookings
+end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
