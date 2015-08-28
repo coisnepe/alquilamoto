@@ -9,19 +9,28 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6">
-      <%= image_tag @bike.picture.url(:large), style:"width:100%" %>
+    <div class="col-xs-12 col-sm-12 col-md-6 Aligner" style="height:479px">
+      <div class="Aligner-item">
+          <%= image_tag @bike.picture.url(:large),style:"width:100%" %>
+      </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="text-center">
-        <p><%= @bike.description %></p>
-        <p>Category: <%= @bike.bike_category %></p>
-        <p>Price/day: <%= @bike.price_per_day %></p>
-        <p>Location: <%= @bike.city %></p>
+      <div>
+        <ul class="clean-list list-unstyled">
+          <li><div class="text-center"><strong><h3><%= @bike.description %></strong></h3></div></li>
+          <li></li>
+          <li><div class="title"><strong>Category: </strong></div><div class="content"><%= @bike.bike_category %></div></li>
+          <li><div class="title"><strong>Price/day:  </strong> </div><div class="content"><%= @bike.price_per_day %> €</div></li>
+          <li><div class="title"><strong>Location:  </strong> </div><div class="content"><%= @bike.city %></div></li>
+        </ul>
+      </div>
+
         <% if @bike.owner != current_user %>
           <p><%= link_to "Book this bike", new_bike_booking_path(@bike), class: "btn btn-success" %></p>
         <% end %>
+        <div id="map" style="width: 100%; height: 300px;"></div>
       </div>
     </div>
 
