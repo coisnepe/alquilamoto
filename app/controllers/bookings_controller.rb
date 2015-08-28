@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
 
+# INDEX WILL DISSAPEAR!!
   def index
     @bookings = Booking.where(customer: current_user) #this method is not nested in bikes
     # @bike = Bike.find(params[:bike_id])

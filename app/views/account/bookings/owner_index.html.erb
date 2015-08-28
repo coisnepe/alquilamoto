@@ -1,7 +1,4 @@
 
-<!-- WE'LL NOT USE THIS ANYMORE!!!!!!!!!!!!! -->
-
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
@@ -10,7 +7,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <% cont = 0 %>
       <% @bookings.each do |booking| %>
-        <% if booking.owner == current_user %>
+
           <% cont += 1 %>
           <ul>
             <li>Your bike: <strong><%= booking.bike.description %></strong></li>
@@ -27,7 +24,7 @@
             <%= link_to "Validate this booking", flop_booking_path(booking)%>
              <!-- <a id="validate_booking" class="btn btn-success"> Validate this booking</a> -->
           </ul>
-        <% end %>
+
       <% end %>
       <% if cont == 0 %>
         <p class="text-center"> For the moment you don't have bookings for your bikes </p>
@@ -44,7 +41,3 @@
 //     });
 //   })
  -->
-
-
-<!-- THIS IS NOT GOOD HERE I NEED THE BOOKING OF ALLA MY BIKES
-AND THIS ONE WILL BE IN AN  INDEX OF ALL MY BOOKINGS -->

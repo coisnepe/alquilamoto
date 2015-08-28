@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: 'pages#home'
-
+  get 'top', to: "restaurants#top"
+  root to: "pages#home"
 
 
 
@@ -24,7 +24,12 @@ Rails.application.routes.draw do
 # Routes for owner navigation => see his bikes, see bookins for his bikes, see the bookings he sent to other owners
 namespace :account do
   resources :bikes
-  resources :bookings
+  resources :bookings do
+    collection do
+      get 'owner_index', to: "bookings#owner_index"
+      get 'renter_index', to: "bookings#renter_index"
+    end
+  end
 end
 
 
