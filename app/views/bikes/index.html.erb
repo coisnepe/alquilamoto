@@ -30,15 +30,15 @@
             <%#= image_tag bike.picture(:medium) %>
         </div>
 
-        <div class="flex-bike-details">
+        <div class="flex-bike-details" style="text-align: right">
           <p>
-            Category: <strong><%= bike.bike_category %></strong>
+            <strong><%= bike.bike_category %></strong>
           </p>
           <p>
-            Price/day: <strong><%= bike.price_per_day %></strong>
+            <strong><%= bike.price_per_day %>€/day</strong>
           </p>
           <p>
-            Location: <strong><%= bike.city[0..10] + "..." %></strong>
+            in <strong><%= bike.city %></strong>
           </p>
           </div>
       </div>
