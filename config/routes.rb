@@ -9,24 +9,36 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: 'pages#home'
-
+  get 'top', to: "restaurants#top"
+  root to: "pages#home"
 
 
 
   # Routes for customer navigation
   resources :users, only: :show
+
   resources :bikes, only: [:index, :show]  do
-    resources :bookings, only: [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show] #show here is used for the recap after booking a bike
   end
 
 # Routes for owner navigation => see his bikes, see bookins for his bikes, see the bookings he sent to other owners
 namespace :account do
   resources :bikes
-  resources :bookings
+  resources :bookings do
+    collection do
+      get 'owner_index', to: "bookings#owner_index"
+      get 'renter_index', to: "bookings#renter_index"
+    end
+  end
 end
 
 
+# tryon to validate booking:
+resources :bookings do
+    member do
+        get :flop
+    end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

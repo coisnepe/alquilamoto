@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
 
-  before_action :find_cocktail, only: [ :show ]
-  def index
-    # @bookings =  Booking.where(user_id: params[:user_id])
 
+# INDEX WILL DISSAPEAR!!
+  def index
+    @bookings = Booking.where(customer: current_user) #this method is not nested in bikes
+    # @bike = Bike.find(params[:bike_id])
+    # @booking = Booking.where(bike_id: @bike.id)
   end
 
   def show
@@ -23,11 +25,25 @@ class BookingsController < ApplicationController
     @booking.total_price = 1000
     @booking.bike_id = @bike.id
     @booking.user_id = current_user.id
+    @booking.validated = false
     # @booking.total_price = TODO
     @booking.save
-    redirect_to root_path
+
+    redirect_to bike_booking_path(@booking.bike_id,@booking)
 
   end
+
+  def flop
+      booking = Booking.find(params[:id])
+      booking.validated = !booking.validated # flop the status
+      booking.save
+
+      redirect_to user_path(current_user)
+  end
+  # def status_name
+  #     status ? "Yes" : "No"
+  # end
+
 
   private
 
