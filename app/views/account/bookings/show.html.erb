@@ -8,12 +8,36 @@
 
 <div class="container">
   <div class="row text-center">
-    <ul class="list-unstyled">
-      <li>Rental starts on : <strong><%= @booking.date_begin %></strong></li>
-      <li>Rental ends on : <strong><%= @booking.date_end %></strong></li>
-      <li>Total price for your rental : <strong><%= @booking.total_price %> €</strong></li>
-      <li>Bike's details : <strong><%= @bike.description %></strong></li>
-      <li>Owner's first name : <strong><%= @user.first_name %></strong></li>
+
+    <ul class="clean-list list-unstyled">
+      <li>
+        <div class="title">Rental starts on :</div>
+        <div class="content"><strong><%= @booking.date_begin %></strong></div>
+      </li>
+
+      <li>
+        <div class="title">Rental ends on :</div>
+        <div class="content"><strong><%= @booking.date_end %></strong></div>
+      </li>
+
+      <li>
+        <div class="title">Total price for your rental :</div>
+        <div class="content"><strong><%= @booking.total_price %> €</strong></div>
+      </li>
+
+      <li>
+        <div class="title">Bike's details :</div>
+        <div class="content"><strong><%= @bike.description %></strong></div>
+      </li>
+
+      <li>
+        <div class="title">Owner's first name :</div>
+        <div class="content"><strong><%= @user.first_name %></strong></div>
+      </li>
+
     </ul>
+
+    <p>Your booking needs now to be validated by the owner (You'll receive a confirmation mail)</p>
+    <%= link_to "Back to Profile",  user_path(current_user), class: "btn btn-primary"%>
   </div>
 </div>
