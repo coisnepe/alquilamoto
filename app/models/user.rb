@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_create :send_welcome_email
+  #after_create :send_welcome_email
 
   has_many :bookings
   has_many :bikes
