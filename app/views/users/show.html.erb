@@ -8,14 +8,14 @@
     </div>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
       <%= image_tag current_user.picture.url(:small) %>
-      <ul class="list-unstyled">
-        <li><strong>First name: </strong> <%= @user.first_name %></li>
-        <li><strong>Last name: </strong><%= @user.last_name %></li>
-        <li><strong>Email: </strong><%= @user.email %></li>
-        <li><strong>Phone number: </strong><%= @user.phone_number %></li>
-        <li><strong>Birth date: </strong><%= @user.date_birth %></li>
-        <li><strong>Driver's licence date of issue: </strong><%= @user.date_driver_licence %></li>
-        <li><strong>Bio: </strong><%= @user.bio %></li>
+      <ul class="clean-list list-unstyled">
+        <li><div class="title"><strong>First name: </strong> </div><div class="content"><%= @user.first_name %></div></li>
+        <li><div class="title"><strong>Last name: </strong></div><div class="content"><%= @user.last_name %></div></li>
+        <li><div class="title"><strong>Email: </strong></div><div class="content"><%= @user.email %></div></li>
+        <li><div class="title"><strong>Phone number: </strong></div><div class="content"><%= @user.phone_number %></div></li>
+        <li><div class="title"><strong>Birth date: </strong></div><div class="content"><%= @user.date_birth %></div></li>
+        <li><div class="title"><strong>Driver's licence date of issue: </strong></div><div class="content"><%= @user.date_driver_licence %></div></li>
+        <li><div class="title"><strong>Bio: </strong></div><div class="content"><%= @user.bio %></div></li>
       </ul>
 
     </div>
@@ -35,7 +35,7 @@
       <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
         <h2>My Bikes</h2>
         <% current_user.bikes.each do |bike| %>
-        <div class="row">
+        <div class="row padded-bike">
 
             <div class="col-sm-6">
               <%= link_to account_bike_path(bike) do%>

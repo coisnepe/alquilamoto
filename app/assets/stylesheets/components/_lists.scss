@@ -1,0 +1,10 @@
+ul.clean-list > li { display: block; height: 25px; }
+ul.clean-list > li > div.title { float: left }
+ul.clean-list > li > div.content { float: right }
+
+.padded-bike {
+  border: solid 1px;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
