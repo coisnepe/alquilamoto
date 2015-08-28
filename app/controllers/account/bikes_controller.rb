@@ -16,7 +16,7 @@ module Account
       @bike = Bike.new(bike_params)
       @bike.owner = current_user
       @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to  account_bike_path(@bike)
     end
 
     def edit
